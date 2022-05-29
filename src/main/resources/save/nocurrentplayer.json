@@ -1,0 +1,223 @@
+{
+    "chess": [
+        {
+            "pieceType": "PAWN",
+            "x": 0,
+            "y": 1,
+            "side": "Black"
+        },
+        {
+            "pieceType": "PAWN",
+            "x": 2,
+            "y": 1,
+            "side": "Black"
+        },
+        {
+            "pieceType": "PAWN",
+            "x": 3,
+            "y": 1,
+            "side": "Black"
+        },
+        {
+            "pieceType": "PAWN",
+            "x": 6,
+            "y": 1,
+            "side": "Black"
+        },
+        {
+            "pieceType": "PAWN",
+            "x": 7,
+            "y": 1,
+            "side": "Black"
+        },
+        {
+            "pieceType": "ROOK",
+            "x": 0,
+            "y": 0,
+            "side": "Black"
+        },
+        {
+            "pieceType": "ROOK",
+            "x": 5,
+            "y": 0,
+            "side": "Black"
+        },
+        {
+            "pieceType": "KNIGHT",
+            "x": 4,
+            "y": 3,
+            "side": "Black"
+        },
+        {
+            "pieceType": "BISHOP",
+            "x": 1,
+            "y": 1,
+            "side": "Black"
+        },
+        {
+            "pieceType": "QUEEN",
+            "x": 3,
+            "y": 0,
+            "side": "Black"
+        },
+        {
+            "pieceType": "KING",
+            "x": 7,
+            "y": 0,
+            "side": "Black"
+        },
+        {
+            "pieceType": "PAWN",
+            "x": 0,
+            "y": 6,
+            "side": "White"
+        },
+        {
+            "pieceType": "PAWN",
+            "x": 2,
+            "y": 5,
+            "side": "White"
+        },
+        {
+            "pieceType": "PAWN",
+            "x": 5,
+            "y": 6,
+            "side": "White"
+        },
+        {
+            "pieceType": "PAWN",
+            "x": 6,
+            "y": 6,
+            "side": "White"
+        },
+        {
+            "pieceType": "PAWN",
+            "x": 7,
+            "y": 6,
+            "side": "White"
+        },
+        {
+            "pieceType": "ROOK",
+            "x": 0,
+            "y": 7,
+            "side": "White"
+        },
+        {
+            "pieceType": "ROOK",
+            "x": 5,
+            "y": 7,
+            "side": "White"
+        },
+        {
+            "pieceType": "KNIGHT",
+            "x": 1,
+            "y": 7,
+            "side": "White"
+        },
+        {
+            "pieceType": "BISHOP",
+            "x": 2,
+            "y": 7,
+            "side": "White"
+        },
+        {
+            "pieceType": "BISHOP",
+            "x": 5,
+            "y": 1,
+            "side": "White"
+        },
+        {
+            "pieceType": "KING",
+            "x": 6,
+            "y": 7,
+            "side": "White"
+        }
+    ],
+    "taken": [
+        {
+            "pieceType": "PAWN",
+            "x": 4,
+            "y": 3,
+            "side": "Black"
+        },
+        {
+            "pieceType": "PAWN",
+            "x": 4,
+            "y": 4,
+            "side": "White"
+        },
+        {
+            "pieceType": "KNIGHT",
+            "x": 4,
+            "y": 4,
+            "side": "Black"
+        },
+        {
+            "pieceType": "KNIGHT",
+            "x": 4,
+            "y": 3,
+            "side": "White"
+        },
+        {
+            "pieceType": "PAWN",
+            "x": 1,
+            "y": 1,
+            "side": "Black"
+        },
+        {
+            "pieceType": "QUEEN",
+            "x": 1,
+            "y": 1,
+            "side": "White"
+        },
+        {
+            "pieceType": "PAWN",
+            "x": 5,
+            "y": 1,
+            "side": "Black"
+        },
+        {
+            "pieceType": "PAWN",
+            "x": 3,
+            "y": 4,
+            "side": "White"
+        },
+        {
+            "pieceType": "PAWN",
+            "x": 2,
+            "y": 5,
+            "side": "White"
+        },
+        {
+            "pieceType": "BISHOP",
+            "x": 2,
+            "y": 5,
+            "side": "Black"
+        }
+    ],
+    "step": [
+        "4644",
+        "4143",
+        "6755",
+        "1022",
+        "5724",
+        "5023",
+        "3746",
+        "6052",
+        "4767",
+        "4060",
+        "5543x",
+        "5244x",
+        "4644x",
+        "2243x",
+        "4411x",
+        "2011x",
+        "2451x",
+        "6070",
+        "3634",
+        "2334x",
+        "2625",
+        "3425x",
+        "1625x"
+    ]
+}

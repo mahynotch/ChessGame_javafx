@@ -1,0 +1,194 @@
+[
+  {
+    "pieceType": "PAWN",
+    "side": "Black",
+    "x": 0,
+    "y": 1
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "Black",
+    "x": 1,
+    "y": 1
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "Black",
+    "x": 2,
+    "y": 1
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "Black",
+    "x": 3,
+    "y": 1
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "Black",
+    "x": 4,
+    "y": 1
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "Black",
+    "x": 5,
+    "y": 1
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "Black",
+    "x": 6,
+    "y": 1
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "Black",
+    "x": 7,
+    "y": 1
+  },
+  {
+    "pieceType": "ROOK",
+    "side": "Black",
+    "x": 0,
+    "y": 0
+  },
+  {
+    "pieceType": "ROOK",
+    "side": "Black",
+    "x": 7,
+    "y": 0
+  },
+  {
+    "pieceType": "KNIGHT",
+    "side": "Black",
+    "x": 1,
+    "y": 0
+  },
+  {
+    "pieceType": "KNIGHT",
+    "side": "Black",
+    "x": 6,
+    "y": 0
+  },
+  {
+    "pieceType": "BISHOP",
+    "side": "Black",
+    "x": 2,
+    "y": 0
+  },
+  {
+    "pieceType": "BISHOP",
+    "side": "Black",
+    "x": 5,
+    "y": 0
+  },
+  {
+    "pieceType": "QUEEN",
+    "side": "Black",
+    "x": 3,
+    "y": 0
+  },
+  {
+    "pieceType": "KING",
+    "side": "Black",
+    "x": 4,
+    "y": 0
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "White",
+    "x": 0,
+    "y": 6
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "White",
+    "x": 1,
+    "y": 6
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "White",
+    "x": 2,
+    "y": 6
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "White",
+    "x": 3,
+    "y": 6
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "White",
+    "x": 4,
+    "y": 6
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "White",
+    "x": 5,
+    "y": 6
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "White",
+    "x": 6,
+    "y": 6
+  },
+  {
+    "pieceType": "PAWN",
+    "side": "White",
+    "x": 7,
+    "y": 6
+  },
+  {
+    "pieceType": "ROOK",
+    "side": "White",
+    "x": 0,
+    "y": 7
+  },
+  {
+    "pieceType": "ROOK",
+    "side": "White",
+    "x": 7,
+    "y": 7
+  },
+  {
+    "pieceType": "KNIGHT",
+    "side": "White",
+    "x": 6,
+    "y": 7
+  },
+  {
+    "pieceType": "KNIGHT",
+    "side": "White",
+    "x": 1,
+    "y": 7
+  },
+  {
+    "pieceType": "BISHOP",
+    "side": "White",
+    "x": 2,
+    "y": 7
+  },
+  {
+    "pieceType": "BISHOP",
+    "side": "White",
+    "x": 5,
+    "y": 7
+  },
+  {
+    "pieceType": "QUEEN",
+    "side": "White",
+    "x": 3,
+    "y": 7
+  },
+  {
+    "pieceType": "KING",
+    "side": "White",
+    "x": 4,
+    "y": 7
+  }
+]
