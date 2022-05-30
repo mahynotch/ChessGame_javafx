@@ -119,7 +119,8 @@ public class Controller implements EventHandler<MouseEvent> {
         cntDwnLabel.setLayoutX(cellL * 8);
         cntDwnLabel.setLayoutY(cellL / 5);
         boardPane.getChildren().add(cntDwnLabel);
-        animation = new Timeline(new KeyFrame(Duration.millis(1000), e -> timelabel()));
+        KeyFrame keyFrame = new KeyFrame(Duration.millis(1000), e -> timelabel());
+        animation = new Timeline(keyFrame);
         animation.setCycleCount(Timeline.INDEFINITE);
         animation.play();
     }
@@ -524,6 +525,7 @@ public class Controller implements EventHandler<MouseEvent> {
                 if (moveComponent.canMove(currentPiece, chess, x, y)) {
                     if (currentPiece.getPieceType() == PieceTypes.PAWN && nextPiece == null && Math.abs(currentPiece.getX() - x) == 1 && Math.abs(currentPiece.getY() - y) == 1) {
                         remove(getPiece(x, currentPiece.getY()));
+                        taken.add(nextPiece);
                         addStep(currentPiece.getX(), currentPiece.getY(), x, y, true);
                     } else {
                         addStep(currentPiece.getX(), currentPiece.getY(), x, y, chess[y][x] != 0);
@@ -531,9 +533,10 @@ public class Controller implements EventHandler<MouseEvent> {
                     currentPiece.move(x, y);
                     boardPane.ac.play();
                     refresh();
+                    if (currentPiece.getPieceType() == PieceTypes.PAWN && (y == 0 || y == 7))
+                        step.set(step.size() - 1, step.get(step.size() - 1) + "t");
                     if (nextPiece != null) {
-                        remove(nextPiece);
-                        if(nextPiece.getPieceType() == PieceTypes.KING){
+                        if (nextPiece.getPieceType() == PieceTypes.KING) {
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                             String content = "Winner is " + (currentPiece.equals("W") ? "Black" : "White");
                             alert.setContentText(content);
@@ -680,8 +683,11 @@ public class Controller implements EventHandler<MouseEvent> {
 
     public void addStep(int x1, int y1, int x, int y, boolean eat) {
         restartCntDwn();
-        if (x1 == 0 && y1 == 0 && x == 0 && y == 0) step.add("");
-        step.add(String.format(eat ? "%d%d%d%dx" : "%d%d%d%d", x1, y1, x, y));
+        if (x1 == 0 && y1 == 0 && x == 0 && y == 0) {
+            step.add("");
+        } else {
+            step.add(String.format(eat ? "%d%d%d%dx" : "%d%d%d%d", x1, y1, x, y));
+        }
         if (step.size() >= 10)
             if (step.get(step.size() - 1).equals(step.get(step.size() - 5)) && step.get(step.size() - 5).equals(step.get(step.size() - 9)) && step.get(step.size() - 2).equals(step.get(step.size() - 6)) && step.get(step.size() - 6).equals(step.get(step.size() - 10)))
                 assertDraw();
@@ -701,7 +707,7 @@ public class Controller implements EventHandler<MouseEvent> {
         String lastStep = step.get(step.size() - 1);
         restartCntDwn();
         try {
-            step.remove(lastStep);
+            step.remove(step.size() - 1);
             int i = Integer.parseInt(String.valueOf(lastStep.charAt(2)));
             ChessPiece piece = step.size() % 2 == 0 ? getWhitePiece(i, Integer.parseInt(String.valueOf(lastStep.charAt(3)))) : getBlackPiece(i, Integer.parseInt(String.valueOf(lastStep.charAt(3))));
             int parseInt = Integer.parseInt(String.valueOf(lastStep.charAt(0)));
@@ -713,26 +719,24 @@ public class Controller implements EventHandler<MouseEvent> {
                 rook.reverseMove(0, Integer.parseInt(String.valueOf(lastStep.charAt(1))));
             }
             piece.reverseMove(parseInt, Integer.parseInt(String.valueOf(lastStep.charAt(1))));
+            if (lastStep.contains("t")) piece.reversePromo();
             refresh();
         } catch (Exception e) {
         }
-        try {
-            if (lastStep.charAt(4) == 'x') {
-                ChessPiece revive = taken.get(taken.size() - 1);
-                taken.remove(taken.size() - 1);
-                revive.getImageView().setX(cellL + cellL * revive.getX());
-                revive.getImageView().setY(cellL + cellL * revive.getY());
-                revive.getImageView().setScaleX(cellL / 100);
-                revive.getImageView().setScaleY(cellL / 100);
-                revive.getImageView().setVisible(true);
-                revive.getImageView().setDisable(false);
-                if (revive.getSide().equals("White")) {
-                    boardPane.getWhiteChessList().add(revive);
-                } else {
-                    boardPane.getBlackChessList().add(revive);
-                }
+        if (lastStep.contains("x")) {
+            ChessPiece revive = taken.get(taken.size() - 1);
+            taken.remove(taken.size() - 1);
+            revive.getImageView().setX(cellL + cellL * revive.getX());
+            revive.getImageView().setY(cellL + cellL * revive.getY());
+            revive.getImageView().setScaleX(cellL / 100);
+            revive.getImageView().setScaleY(cellL / 100);
+            revive.getImageView().setVisible(true);
+            revive.getImageView().setDisable(false);
+            if (revive.getSide().equals("White")) {
+                boardPane.getWhiteChessList().add(revive);
+            } else {
+                boardPane.getBlackChessList().add(revive);
             }
-        } catch (Exception e) {
         }
         boardPane.rnd.setText(String.valueOf((step.size() + 1) / 2));
         boardPane.setCurrentSide(boardPane.getCurrentSide().equals("W") ? "B" : "W");
