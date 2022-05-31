@@ -133,6 +133,7 @@ public class Controller implements EventHandler<MouseEvent> {
             tmp = 30;
             boardPane.setCurrentSide(boardPane.getCurrentSide().equals("W") ? "B" : "W");
             boardPane.l.setText(boardPane.getCurrentSide());
+            boardPane.rnd.setText(String.valueOf((step.size() + 1) / 2));
         }
     }
 
@@ -689,7 +690,7 @@ public class Controller implements EventHandler<MouseEvent> {
             step.add(String.format(eat ? "%d%d%d%dx" : "%d%d%d%d", x1, y1, x, y));
         }
         if (step.size() >= 10)
-            if (step.get(step.size() - 1).equals(step.get(step.size() - 5)) && step.get(step.size() - 5).equals(step.get(step.size() - 9)) && step.get(step.size() - 2).equals(step.get(step.size() - 6)) && step.get(step.size() - 6).equals(step.get(step.size() - 10)))
+            if (step.get(step.size() - 1).equals(step.get(step.size() - 5)) && step.get(step.size() - 5).equals(step.get(step.size() - 9)) && step.get(step.size() - 2).equals(step.get(step.size() - 6)) && step.get(step.size() - 6).equals(step.get(step.size() - 10)) && !step.get(step.size() - 1).equals(""))
                 assertDraw();
     }
 
