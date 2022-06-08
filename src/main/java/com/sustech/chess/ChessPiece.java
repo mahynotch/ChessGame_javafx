@@ -135,7 +135,7 @@ public class ChessPiece {
                 upgrade.close();
             }
         });
-        toBishop.setPrefSize(2 * cellL, cellL);
+        toBishop.setPrefSize(2 * cellL, 2 * cellL);
         toBishop.setLayoutX(2 * cellL);
         toQueen.setPrefSize(2 * cellL, 2 * cellL);
         toKnight.setPrefSize(2 * cellL, 2 * cellL);
@@ -143,6 +143,12 @@ public class ChessPiece {
         toRook.setPrefSize(2 * cellL, 2 * cellL);
         toRook.setLayoutX(6 * cellL);
         upgrade.show();
+    }
+
+    public void reversePromo(){
+        moveComponent = side.equals("White") ? new WhitePawnComponent() : new BlackPawnComponent();
+        imageView.setImage(Utils.pieceImageLoader(side + PieceTypes.PAWN.location));
+        pieceType = PieceTypes.PAWN;
     }
 
     public void shortCastle() {
