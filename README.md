@@ -1,2 +1,2 @@
 # Intro
-This is a chess game created with JavaFX, serve as a class project.
+This is a chess game created with JavaFX, a class project.
